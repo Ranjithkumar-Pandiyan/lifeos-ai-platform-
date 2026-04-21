@@ -1,0 +1,56 @@
+\chapter{API Reference}
+\label{appendix:api-reference}
+
+\section{REST API Endpoints}
+
+\subsection{Authentication Endpoints}
+
+\begin{table}[H]
+\centering
+\caption{Authentication API Endpoints}
+\begin{tabular}{|l|l|p{6cm}|}
+\hline
+\rowcolor{lightgray}
+\textbf{Method} & \textbf{Endpoint} & \textbf{Description} \\
+\hline
+POST & /api/v1/auth/register & Register new user \\
+\hline
+POST & /api/v1/auth/login & User login \\
+\hline
+POST & /api/v1/auth/refresh & Refresh access token \\
+\hline
+POST & /api/v1/auth/logout & User logout \\
+\hline
+POST & /api/v1/auth/forgot-password & Request password reset \\
+\hline
+POST & /api/v1/auth/reset-password & Reset password \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Task Endpoints}
+
+\begin{table}[H]
+\centering
+\caption{Task API Endpoints}
+\begin{tabular}{|l|l|p{6cm}|}
+\hline
+\rowcolor{lightgray}
+\textbf{Method} & \textbf{Endpoint} & \textbf{Description} \\
+\hline
+GET & /api/v1/tasks & Get all tasks \\
+\hline
+POST & /api/v1/tasks & Create new task \\
+\hline
+GET & /api/v1/tasks/:id & Get task by ID \\
+\hline
+PUT & /api/v1/tasks/:id & Update task \\
+\hline
+DELETE & /api/v1/tasks/:id & Delete task \\
+\hline
+POST & /api/v1/tasks/:id/complete & Mark task complete \\
+\hline
+\end{tabular}
+\end{table}
+
+\note{Complete API documentation with 50+ endpoints available in SYSTEM\_ARCHITECTURE\_PART4.md}

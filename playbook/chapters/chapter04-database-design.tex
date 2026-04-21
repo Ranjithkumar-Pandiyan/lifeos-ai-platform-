@@ -1,0 +1,26 @@
+\chapter{Database Design \& Implementation}
+\label{ch:database-design}
+
+\section{Overview}
+
+This chapter covers the complete database architecture for \lifeos{}, including schemas, indexes, optimization strategies, and scaling approaches.
+
+\begin{keypoint}
+\lifeos{} uses a multi-database strategy optimized for different data types and access patterns, ensuring optimal performance at scale.
+\end{keypoint}
+
+\section{Database Strategy}
+
+\subsection{PostgreSQL - Relational Data}
+Primary database for structured data including users, tasks, goals, and relationships.
+
+\subsection{MongoDB - Flexible Schemas}
+Document store for habits, notes, templates, and user preferences.
+
+\subsection{Redis - Caching Layer}
+In-memory cache for sessions, real-time data, and frequently accessed information.
+
+\subsection{Elasticsearch - Search Engine}
+Full-text search across all user content with advanced filtering.
+
+\note{Complete database schemas with 15+ tables, indexes, and optimization strategies are documented in SYSTEM\_ARCHITECTURE\_PART3.md in the repository.}

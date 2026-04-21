@@ -1,0 +1,46 @@
+\chapter{Code Samples}
+\label{appendix:code-samples}
+
+\section{Frontend Code Examples}
+
+\subsection{React Component Example}
+
+\begin{lstlisting}[language=JavaScript, caption=Task Component]
+import React from 'react';
+import { useTask } from '@/hooks/useTask';
+
+export const TaskItem = ({ taskId }) => {
+  const { task, updateTask, deleteTask } = useTask(taskId);
+  
+  return (
+    <div className="task-item">
+      <h3>{task.title}</h3>
+      <p>{task.description}</p>
+      <button onClick={() => updateTask({ completed: true })}>
+        Complete
+      </button>
+    </div>
+  );
+};
+\end{lstlisting}
+
+\section{Backend Code Examples}
+
+\subsection{Node.js API Endpoint}
+
+\begin{lstlisting}[language=JavaScript, caption=Task API Endpoint]
+app.post('/api/v1/tasks', async (req, res) => {
+  try {
+    const task = await Task.create({
+      userId: req.user.id,
+      title: req.body.title,
+      description: req.body.description
+    });
+    res.status(201).json(task);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+\end{lstlisting}
+
+\note{Complete code repository available at https://github.com/Ranjithkumar-Pandiyan/lifeos-ai-platform-}
